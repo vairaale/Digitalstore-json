@@ -1,0 +1,29 @@
+[
+  {
+    "id": 101,
+    "nombre": "Notebook Lenovo IdeaPad 3",
+    "desc": "Notebook con procesador Intel Core i5 y 8GB de RAM.",
+    "precio": 950000,
+    "imagen": "https://example.com/img/lenovo.jpg",
+    "stock": 10,
+    "disponible": true
+  },
+  {
+    "id": 102,
+    "nombre": "Smartphone Samsung Galaxy A54",
+    "desc": "Celular con pantalla AMOLED de 6.4 pulgadas y 128GB.",
+    "precio": 720000,
+    "imagen": "https://example.com/img/samsung.jpg",
+    "stock": 15,
+    "disponible": true
+  },
+  {
+    "id": 103,
+    "nombre": "Auriculares Sony WH-CH520",
+    "desc": "Auriculares inalámbricos con Bluetooth.",
+    "precio": 120000,
+    "imagen": "https://example.com/img/sony.jpg",
+    "stock": 0,
+    "disponible": false
+  }
+]
