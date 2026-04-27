@@ -30,5 +30,19 @@
         "cantidad": 1
       }
     ]
+  },
+  {
+    "id": 3,
+    "id_usuario": 1,
+    "fecha": "2025-04-27",
+    "total": 500000,
+    "direccion": "Buenos Aires",
+    "pagado": true,
+    "productos": [
+      {
+        "id": 101,
+        "cantidad": 1
+      }
+    ]
   }
 ]
