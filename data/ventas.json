@@ -44,5 +44,19 @@
         "cantidad": 1
       }
     ]
+  },
+  {
+    "id_usuario": 1,
+    "fecha": "2026-05-02",
+    "total": 450000,
+    "direccion": "Cordoba",
+    "pagado": true,
+    "productos": [
+      {
+        "id": 1,
+        "cantidad": 1
+      }
+    ],
+    "id": 4
   }
 ]
