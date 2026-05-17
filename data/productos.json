@@ -4,26 +4,151 @@
     "nombre": "Notebook Lenovo IdeaPad 3",
     "desc": "Notebook con procesador Intel Core i5 y 8GB de RAM.",
     "precio": 950000,
-    "imagen": "https://example.com/img/lenovo.jpg",
+    "imagen": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853",
     "stock": 10,
-    "disponible": true
+    "disponible": true,
+    "categoria": "notebooks"
   },
   {
     "id": 102,
-    "nombre": "Smartphone Samsung Galaxy A54",
-    "desc": "Celular con pantalla AMOLED de 6.4 pulgadas y 128GB.",
-    "precio": 720000,
-    "imagen": "https://example.com/img/samsung.jpg",
-    "stock": 15,
-    "disponible": true
+    "nombre": "Notebook HP Pavilion 15",
+    "desc": "Notebook HP con Ryzen 5 y SSD de 512GB.",
+    "precio": 1100000,
+    "imagen": "https://images.unsplash.com/photo-1517336714739-489689fd1ca8",
+    "stock": 8,
+    "disponible": true,
+    "categoria": "notebooks"
   },
   {
     "id": 103,
+    "nombre": "MacBook Air M2",
+    "desc": "Laptop Apple ultraliviana con chip M2.",
+    "precio": 2200000,
+    "imagen": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4",
+    "stock": 5,
+    "disponible": true,
+    "categoria": "notebooks"
+  },
+  {
+    "id": 104,
+    "nombre": "ASUS TUF Gaming",
+    "desc": "Notebook gamer con RTX 4060 y 16GB RAM.",
+    "precio": 1850000,
+    "imagen": "https://images.unsplash.com/photo-1509395176047-4a66953fd231",
+    "stock": 4,
+    "disponible": true,
+    "categoria": "notebooks"
+  },
+  {
+    "id": 105,
+    "nombre": "Dell Inspiron 14",
+    "desc": "Notebook compacta ideal para oficina y estudio.",
+    "precio": 980000,
+    "imagen": "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2",
+    "stock": 7,
+    "disponible": true,
+    "categoria": "notebooks"
+  },
+
+  {
+    "id": 201,
+    "nombre": "Samsung Galaxy A54",
+    "desc": "Celular con pantalla AMOLED y 128GB.",
+    "precio": 720000,
+    "imagen": "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf",
+    "stock": 15,
+    "disponible": true,
+    "categoria": "smartphones"
+  },
+  {
+    "id": 202,
+    "nombre": "iPhone 15",
+    "desc": "Smartphone Apple con cámara avanzada.",
+    "precio": 1900000,
+    "imagen": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9",
+    "stock": 6,
+    "disponible": true,
+    "categoria": "smartphones"
+  },
+  {
+    "id": 203,
+    "nombre": "Motorola Edge 40",
+    "desc": "Celular Motorola 5G con pantalla OLED.",
+    "precio": 850000,
+    "imagen": "https://images.unsplash.com/photo-1598327105666-5b89351aff97",
+    "stock": 9,
+    "disponible": true,
+    "categoria": "smartphones"
+  },
+  {
+    "id": 204,
+    "nombre": "Xiaomi Redmi Note 13",
+    "desc": "Smartphone Xiaomi con batería de larga duración.",
+    "precio": 640000,
+    "imagen": "https://images.unsplash.com/photo-1580910051074-3eb694886505",
+    "stock": 12,
+    "disponible": true,
+    "categoria": "smartphones"
+  },
+  {
+    "id": 205,
+    "nombre": "Google Pixel 8",
+    "desc": "Celular Google con Android puro y excelente cámara.",
+    "precio": 1350000,
+    "imagen": "https://images.unsplash.com/photo-1592750475338-74b7b21085ab",
+    "stock": 5,
+    "disponible": true,
+    "categoria": "smartphones"
+  },
+
+  {
+    "id": 301,
     "nombre": "Auriculares Sony WH-CH520",
-    "desc": "Auriculares inalámbricos con Bluetooth.",
+    "desc": "Auriculares inalámbricos Bluetooth.",
     "precio": 120000,
-    "imagen": "https://example.com/img/sony.jpg",
-    "stock": 0,
-    "disponible": false
+    "imagen": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e",
+    "stock": 10,
+    "disponible": true,
+    "categoria": "audio"
+  },
+  {
+    "id": 302,
+    "nombre": "JBL Tune 520BT",
+    "desc": "Auriculares JBL con sonido Pure Bass.",
+    "precio": 98000,
+    "imagen": "https://images.unsplash.com/photo-1484704849700-f032a568e944",
+    "stock": 13,
+    "disponible": true,
+    "categoria": "audio"
+  },
+  {
+    "id": 303,
+    "nombre": "Parlante JBL Flip 6",
+    "desc": "Parlante portátil resistente al agua.",
+    "precio": 210000,
+    "imagen": "https://images.unsplash.com/photo-1546435770-a3e426bf472b",
+    "stock": 7,
+    "disponible": true,
+    "categoria": "audio"
+  },
+  {
+    "id": 304,
+    "nombre": "Soundbar Samsung HW-T420",
+    "desc": "Barra de sonido para TV con subwoofer.",
+    "precio": 350000,
+    "imagen": "https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb",
+    "stock": 4,
+    "disponible": true,
+    "categoria": "audio"
+  },
+  {
+    "id": 305,
+    "nombre": "AirPods Pro 2",
+    "desc": "Auriculares Apple con cancelación de ruido.",
+    "precio": 480000,
+    "imagen": "https://images.unsplash.com/photo-1600294037681-c80b4cb5b434",
+    "stock": 6,
+    "disponible": true,
+    "categoria": "audio"
   }
 ]

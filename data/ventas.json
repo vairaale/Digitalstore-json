@@ -58,5 +58,111 @@
       }
     ],
     "id": 4
+  },
+  {
+    "id_usuario": 1,
+    "fecha": "2026-05-17T20:16:26.646Z",
+    "total": 720000,
+    "direccion": "Córdoba, Argentina",
+    "pagado": true,
+    "productos": [
+      {
+        "id": 102,
+        "cantidad": 1
+      }
+    ],
+    "id": 5
+  },
+  {
+    "id_usuario": 1,
+    "fecha": "2026-05-17T21:38:28.528Z",
+    "total": 1100000,
+    "direccion": "Córdoba, Argentina",
+    "pagado": true,
+    "productos": [
+      {
+        "id": 102,
+        "cantidad": 1
+      }
+    ],
+    "id": 6
+  },
+  {
+    "id_usuario": 1,
+    "fecha": "2026-05-17T21:38:57.752Z",
+    "total": 98000,
+    "direccion": "Córdoba, Argentina",
+    "pagado": true,
+    "productos": [
+      {
+        "id": 302,
+        "cantidad": 1
+      }
+    ],
+    "id": 7
+  },
+  {
+    "id_usuario": 1,
+    "fecha": "2026-05-17T22:06:32.960Z",
+    "total": 98000,
+    "direccion": "Compra Web",
+    "pagado": true,
+    "productos": [
+      {
+        "id": 302,
+        "cantidad": 1
+      }
+    ],
+    "id": 8
+  },
+  {
+    "id_usuario": 1,
+    "fecha": "2026-05-17T22:07:40.561Z",
+    "total": 98000,
+    "direccion": "Compra Web",
+    "pagado": true,
+    "productos": [
+      {
+        "id": 302,
+        "cantidad": 1
+      }
+    ],
+    "id": 9
+  },
+  {
+    "id_usuario": 1,
+    "fecha": "2026-05-17T22:10:06.328Z",
+    "productos": [
+      {
+        "id": 103,
+        "nombre": "MacBook Air M2",
+        "desc": "Laptop Apple ultraliviana con chip M2.",
+        "precio": 2200000,
+        "imagen": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4",
+        "stock": 5,
+        "disponible": true,
+        "categoria": "notebooks"
+      }
+    ],
+    "total": 2200000,
+    "id": 10
+  },
+  {
+    "id_usuario": 1,
+    "fecha": "2026-05-17T22:10:45.985Z",
+    "productos": [
+      {
+        "id": 103,
+        "nombre": "MacBook Air M2",
+        "desc": "Laptop Apple ultraliviana con chip M2.",
+        "precio": 2200000,
+        "imagen": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4",
+        "stock": 5,
+        "disponible": true,
+        "categoria": "notebooks"
+      }
+    ],
+    "total": 2200000,
+    "id": 11
   }
 ]

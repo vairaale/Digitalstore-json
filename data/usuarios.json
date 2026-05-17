@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "nombre": "Juan Actualizado",
+    "nombre": "Juan",
     "apellido": "Pérez",
     "email": "juan.perez@gmail.com",
     "contrasena": "123456",

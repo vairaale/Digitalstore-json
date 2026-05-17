@@ -1,13 +1,17 @@
 import express from "express";
 import fs from "fs/promises";
 import dotenv from "dotenv";
+import cors from "cors";
+
+import usuariosRoutes from "./routes/usuarios.routes.js";
 
 dotenv.config();
-
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
+app.use(cors());
+app.use("/", usuariosRoutes);
 
 app.get("/", (req, res) => {
   res.send("API DigitalStore funcionando correctamente");

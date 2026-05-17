@@ -21,49 +21,66 @@ TechStore API
 
 Este proyecto corresponde a la segunda entrega de la materia Aplicaciones Web II.
 
-Se desarrolló un servidor utilizando Express.js que permite gestionar usuarios, productos y ventas a partir de archivos JSON.
-
+El sistema simula una tienda online de productos tecnológicos utilizando archivos JSON y un servidor desarrollado con Node.js y Express.js aplicando JavaScript moderno (ES6).
 
 Estructura del proyecto
 
-* data/
+DigitalStore/
+│── data/
+│   ├── usuarios.json
+│   ├── productos.json
+│   └── ventas.json
+│
+│── .env
+│── .gitignore
+│── index.js
+│── package.json
+│── README.md
 
-  * usuarios.json
-  * productos.json
-  * ventas.json
-* server.js
+Tecnologías utilizadas
+Node.js
+Express.js
+JavaScript ES6
+Nodemon
+Dotenv
+JSON
+
+Instalar dependencias
+npm install
+Ejecutar servidor
+npm run dev
+
+Servidor disponible en:
+
+http://localhost:3000
+
 
 Endpoints
-GET
-
-/usuarios → obtener todos los usuarios
-/productos → obtener todos los productos
-/ventas → obtener todas las ventas
-
-POST
-
-/usuarios → crear un nuevo usuario
-/ventas → registrar una nueva venta
-
-PUT
-
-/usuarios/:id → actualizar un usuario
-
-DELETE
-
+🔹 GET
+/usuarios → obtener usuarios
+/productos → obtener productos
+/ventas → obtener ventas
+🔹 POST
+/usuarios → crear usuario
+/ventas → registrar venta
+🔹 PUT
+/usuarios/:id → actualizar usuario
+🔹 DELETE
 /usuarios/:id → eliminar usuario
+
 
 Regla de integridad
 
 No se puede eliminar un usuario si tiene ventas asociadas.
-Esto evita inconsistencias en los datos.
 
-Tecnologías utilizadas
+Esto garantiza la consistencia de los datos evitando referencias inválidas.
 
-Node.js
-Express.js
-JSON
-
-Servidor disponible en:
-http://localhost:3000
-
+Características implementadas
+Uso de JavaScript moderno (ES6)
+Uso de import/export
+Variables de entorno con dotenv
+Lectura y escritura de archivos JSON
+Uso de async/await
+Manejo de errores con try/catch
+Validaciones básicas
+API REST con Express.js
