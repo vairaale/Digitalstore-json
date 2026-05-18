@@ -164,5 +164,109 @@
     ],
     "total": 2200000,
     "id": 11
+  },
+  {
+    "id_usuario": 1,
+    "fecha": "2026-05-18T15:51:58.858Z",
+    "productos": [
+      {
+        "id": 301,
+        "nombre": "Auriculares Sony WH-CH520",
+        "desc": "Auriculares inalámbricos Bluetooth.",
+        "precio": 120000,
+        "imagen": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e",
+        "stock": 10,
+        "disponible": true,
+        "categoria": "audio"
+      }
+    ],
+    "total": 120000,
+    "id": 12
+  },
+  {
+    "id_usuario": 1,
+    "fecha": "2026-05-18T16:00:05.931Z",
+    "productos": [
+      {
+        "id": 101,
+        "nombre": "Notebook Lenovo IdeaPad 3",
+        "desc": "Notebook con procesador Intel Core i5 y 8GB de RAM.",
+        "precio": 950000,
+        "imagen": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853",
+        "stock": 10,
+        "disponible": true,
+        "categoria": "notebooks"
+      }
+    ],
+    "total": 950000,
+    "id": 13
+  },
+  {
+    "id_usuario": 1,
+    "fecha": "2026-05-18T16:29:52.965Z",
+    "productos": [
+      {
+        "id": 305,
+        "nombre": "AirPods Pro 2",
+        "desc": "Auriculares Apple con cancelación de ruido.",
+        "precio": 480000,
+        "imagen": "https://images.unsplash.com/photo-1600294037681-c80b4cb5b434",
+        "stock": 6,
+        "disponible": true,
+        "categoria": "audio",
+        "cantidad": 2
+      }
+    ],
+    "total": 480000,
+    "id": 14
+  },
+  {
+    "id_usuario": 1,
+    "fecha": "2026-05-18T16:32:17.638Z",
+    "productos": [
+      {
+        "id": 102,
+        "nombre": "Notebook HP Pavilion 15",
+        "desc": "Notebook HP con Ryzen 5 y SSD de 512GB.",
+        "precio": 1100000,
+        "imagen": "https://images.unsplash.com/photo-1517336714739-489689fd1ca8",
+        "stock": 8,
+        "disponible": true,
+        "categoria": "notebooks",
+        "cantidad": 1
+      },
+      {
+        "id": 101,
+        "nombre": "Notebook Lenovo IdeaPad 3",
+        "desc": "Notebook con procesador Intel Core i5 y 8GB de RAM.",
+        "precio": 950000,
+        "imagen": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853",
+        "stock": 10,
+        "disponible": true,
+        "categoria": "notebooks",
+        "cantidad": 1
+      }
+    ],
+    "total": 2050000,
+    "id": 15
+  },
+  {
+    "id_usuario": 1,
+    "fecha": "2026-05-18T16:35:25.469Z",
+    "productos": [
+      {
+        "id": 101,
+        "nombre": "Notebook Lenovo IdeaPad 3",
+        "desc": "Notebook con procesador Intel Core i5 y 8GB de RAM.",
+        "precio": 950000,
+        "imagen": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853",
+        "stock": 10,
+        "disponible": true,
+        "categoria": "notebooks",
+        "cantidad": 1
+      }
+    ],
+    "total": 950000,
+    "id": 16
   }
 ]

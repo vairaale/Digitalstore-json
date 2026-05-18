@@ -14,7 +14,7 @@
     "nombre": "Notebook HP Pavilion 15",
     "desc": "Notebook HP con Ryzen 5 y SSD de 512GB.",
     "precio": 1100000,
-    "imagen": "https://images.unsplash.com/photo-1517336714739-489689fd1ca8",
+  "imagen": "https://images.unsplash.com/photo-1541807084-5c52b6b3adef",
     "stock": 8,
     "disponible": true,
     "categoria": "notebooks"
