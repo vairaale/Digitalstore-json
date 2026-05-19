@@ -1,5 +1,14 @@
 # DigitalStore - Aplicaciones Web II
 
+## 🔗 Repositorios del proyecto
+
+### Frontend
+👉 https://github.com/vairaale/digitalstore-frontend.git
+
+### Backend / API JSON
+👉 https://github.com/vairaale/Digitalstore-json.git
+
+---
 Este proyecto corresponde a la primera entrega de la materia Aplicaciones Web II.
 
 Estructura del Proyecto
