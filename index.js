@@ -1,11 +1,17 @@
+import verificarToken from "./middlewares/auth.js";
+import bcrypt from "bcrypt";
+import conectarDB from "./config/db.js";
 import express from "express";
-import fs from "fs/promises";
 import dotenv from "dotenv";
 import cors from "cors";
 
 import usuariosRoutes from "./routes/usuarios.routes.js";
+import Usuario from "./models/Usuario.js";
+import Producto from "./models/Producto.js";
+import Venta from "./models/Venta.js";
 
 dotenv.config();
+await conectarDB();
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -18,197 +24,178 @@ app.get("/", (req, res) => {
 });
 
 
-const archivoUsuarios = "./data/usuarios.json";
-const archivoProductos = "./data/productos.json";
-const archivoVentas = "./data/ventas.json";
-
-// FUNCIONES
-
-const leerJSON = async (ruta) => {
-  const data = await fs.readFile(ruta, "utf-8");
-  return JSON.parse(data);
-};
-
-const guardarJSON = async (ruta, data) => {
-  await fs.writeFile(ruta, JSON.stringify(data, null, 2));
-};
 
 // GET usuarios
 app.get("/usuarios", async (req, res) => {
   try {
-    const usuarios = await leerJSON(archivoUsuarios);
+
+    const usuarios = await Usuario.find();
+
     res.json(usuarios);
+
   } catch (error) {
+
     res.status(500).json({
       error: "Error al leer usuarios"
     });
+
   }
 });
 
 // GET productos
 app.get("/productos", async (req, res) => {
   try {
-    const productos = await leerJSON(archivoProductos);
+
+    const productos = await Producto.find();
+
     res.json(productos);
+
   } catch (error) {
+
     res.status(500).json({
       error: "Error al leer productos"
     });
+
   }
 });
 
 // GET ventas
 app.get("/ventas", async (req, res) => {
   try {
-    const ventas = await leerJSON(archivoVentas);
+
+    const ventas = await Venta.find();
+
     res.json(ventas);
+
   } catch (error) {
+
     res.status(500).json({
       error: "Error al leer ventas"
     });
+
   }
 });
 
 // POST usuario
 app.post("/usuarios", async (req, res) => {
   try {
-    const usuarios = await leerJSON(archivoUsuarios);
 
-    const nuevoUsuario = req.body;
+    const {
+      nombre,
+      apellido,
+      email,
+      contrasena
+    } = req.body;
 
-    if (!nuevoUsuario.nombre) {
-      return res.status(400).json({
-        error: "El nombre es obligatorio"
+    const passwordHash =
+      await bcrypt.hash(contrasena, 10);
+
+    const nuevoUsuario =
+      await Usuario.create({
+        nombre,
+        apellido,
+        email,
+        contrasena: passwordHash
       });
-    }
 
-    nuevoUsuario.id =
-      usuarios.length > 0
-        ? usuarios.at(-1).id + 1
-        : 1;
-
-    usuarios.push(nuevoUsuario);
-
-    await guardarJSON(archivoUsuarios, usuarios);
-
-    res.status(201).json(nuevoUsuario);
+    res.status(201).json({
+      mensaje: "Usuario creado",
+      usuario: nuevoUsuario
+    });
 
   } catch (error) {
+
     res.status(500).json({
-      error: "Error al crear usuario"
+      error: error.message
     });
+
   }
 });
 
 // POST venta
-app.post("/ventas", async (req, res) => {
+app.post("/ventas", verificarToken, async (req, res) => {
+
   try {
-    const ventas = await leerJSON(archivoVentas);
 
-    const nuevaVenta = req.body;
-
-    nuevaVenta.id =
-      ventas.length > 0
-        ? ventas.at(-1).id + 1
-        : 1;
-
-    ventas.push(nuevaVenta);
-
-    await guardarJSON(archivoVentas, ventas);
+    const nuevaVenta =
+      await Venta.create(req.body);
 
     res.status(201).json(nuevaVenta);
 
   } catch (error) {
-    res.status(500).json({
-      error: "Error al crear venta"
-    });
-  }
-});
 
+    res.status(500).json({
+      error: error.message
+    });
+
+  }
+
+});
 // PUT usuario
 app.put("/usuarios/:id", async (req, res) => {
+
   try {
 
-    const id = parseInt(req.params.id);
+    const usuario =
+      await Usuario.findByIdAndUpdate(
+        req.params.id,
+        req.body,
+        { new: true }
+      );
 
-    let usuarios = await leerJSON(archivoUsuarios);
-
-    const index = usuarios.findIndex(
-      (u) => u.id === id
-    );
-
-    if (index === -1) {
+    if (!usuario) {
       return res.status(404).json({
         error: "Usuario no encontrado"
       });
     }
 
-    usuarios[index] = {
-      ...usuarios[index],
-      ...req.body
-    };
-
-    await guardarJSON(archivoUsuarios, usuarios);
-
     res.json({
       mensaje: "Usuario actualizado",
-      usuario: usuarios[index]
+      usuario
     });
 
   } catch (error) {
-    res.status(500).json({
-      error: "Error al actualizar usuario"
-    });
-  }
-});
 
+    res.status(500).json({
+      error: error.message
+    });
+
+  }
+
+});
 // DELETE usuario
 app.delete("/usuarios/:id", async (req, res) => {
 
   try {
 
-    const id = parseInt(req.params.id);
+    const usuario =
+      await Usuario.findById(
+        req.params.id
+      );
 
-    let usuarios = await leerJSON(archivoUsuarios);
-
-    const ventas = await leerJSON(archivoVentas);
-
-    const tieneVentas = ventas.some(
-      (v) => v.id_usuario === id
-    );
-
-    if (tieneVentas) {
-      return res.status(400).json({
-        error: "No se puede eliminar un usuario con ventas asociadas"
-      });
-    }
-
-    const index = usuarios.findIndex(
-      (u) => u.id === id
-    );
-
-    if (index === -1) {
+    if (!usuario) {
       return res.status(404).json({
         error: "Usuario no encontrado"
       });
     }
 
-    const eliminado = usuarios.splice(index, 1);
-
-    await guardarJSON(archivoUsuarios, usuarios);
+    await Usuario.findByIdAndDelete(
+      req.params.id
+    );
 
     res.json({
-      mensaje: "Usuario eliminado",
-      usuario: eliminado[0]
+      mensaje: "Usuario eliminado"
     });
 
   } catch (error) {
-    res.status(500).json({
-      error: "Error al eliminar usuario"
-    });
-  }
-});
 
+    res.status(500).json({
+      error: error.message
+    });
+
+  }
+
+});
 app.listen(PORT, () => {
 
   console.log("=================================");

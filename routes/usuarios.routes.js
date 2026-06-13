@@ -1,5 +1,6 @@
 import { Router } from "express";
-import { readFile } from "fs/promises";
+import bcrypt from "bcrypt";
+import Usuario from "../models/Usuario.js";
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
 
@@ -7,10 +8,7 @@ dotenv.config();
 
 const router = Router();
 
-// Leer usuarios
-const usuarios = JSON.parse(
-  await readFile("./data/usuarios.json", "utf-8")
-);
+
 
 // =========================
 // GENERAR TOKEN
@@ -30,22 +28,44 @@ const generarToken = (usuario) => {
 // =========================
 // MIDDLEWARE VALIDAR LOGIN
 // =========================
-const validar = (req, res, next) => {
+const validar = async (req, res, next) => {
+
   const { email, password } = req.body;
 
-  const usuario = usuarios.find(
-    (u) =>
-      u.email === email &&
-      u.contrasena === password
-  );
+  try {
 
-  if (usuario) {
-    req.user = usuario;
-    next();
-  } else {
-    res.status(401).json({
-      message: "Credenciales inválidas"
+    const usuario = await Usuario.findOne({
+      email
     });
+
+    if (!usuario) {
+      return res.status(401).json({
+        message: "Credenciales inválidas"
+      });
+    }
+
+    const passwordCorrecta =
+      await bcrypt.compare(
+        password,
+        usuario.contrasena
+      );
+
+    if (!passwordCorrecta) {
+      return res.status(401).json({
+        message: "Credenciales inválidas"
+      });
+    }
+
+    req.user = usuario;
+
+    next();
+
+  } catch (error) {
+
+    res.status(500).json({
+      error: error.message
+    });
+
   }
 };
 
