@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const ventaSchema = new mongoose.Schema(
   {
-    id_usuario: Number,
+    id_usuario: String,
 
     fecha: String,
 
@@ -13,11 +13,11 @@ const ventaSchema = new mongoose.Schema(
     pagado: Boolean,
 
     productos: [
-      {
-        id: Number,
-        cantidad: Number
-      }
-    ]
+  {
+    id: String,
+    cantidad: Number
+  }
+]
   },
   {
     timestamps: true

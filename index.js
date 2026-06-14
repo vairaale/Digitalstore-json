@@ -178,7 +178,17 @@ app.delete("/usuarios/:id", async (req, res) => {
         error: "Usuario no encontrado"
       });
     }
+const ventas =
+  await Venta.find({
+    id_usuario: req.params.id
+  });
 
+if (ventas.length > 0) {
+  return res.status(400).json({
+    error:
+      "No se puede eliminar un usuario con ventas asociadas"
+  });
+}
     await Usuario.findByIdAndDelete(
       req.params.id
     );
