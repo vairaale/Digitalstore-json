@@ -206,10 +206,16 @@ if (ventas.length > 0) {
   }
 
 });
-app.listen(PORT, () => {
+if (process.env.NODE_ENV !== "production") {
 
-  console.log("=================================");
-  console.log(`Servidor corriendo en puerto ${PORT}`);
-  console.log("=================================");
+  app.listen(PORT, () => {
 
-});
+    console.log("=================================");
+    console.log(`Servidor corriendo en puerto ${PORT}`);
+    console.log("=================================");
+
+  });
+
+}
+
+export default app;
