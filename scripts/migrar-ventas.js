@@ -8,10 +8,7 @@ dotenv.config({
   path: "./.env"
 });
 
-await mongoose.connect(
-  "mongodb://localhost:27017/digitalstore_db"
-);
-
+await mongoose.connect(process.env.MONGODB_URI);
 try {
 
   const data = await fs.readFile(
