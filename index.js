@@ -86,7 +86,17 @@ app.post("/usuarios", async (req, res) => {
       email,
       contrasena
     } = req.body;
+const usuarioExistente = await Usuario.findOne({
+    email
+});
 
+if (usuarioExistente) {
+
+    return res.status(400).json({
+        message: "Ya existe un usuario con ese email."
+    });
+
+}
     const passwordHash =
       await bcrypt.hash(contrasena, 10);
 
